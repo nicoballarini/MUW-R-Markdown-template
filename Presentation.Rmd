@@ -1,0 +1,67 @@
+---
+title: "My Reproducible Slides"
+author: Nicolas Ballarini
+institute: |
+  | Section for Medical Statistics, CeMSIIS 
+  | Medical University of Vienna
+date: "October, 2017"
+output: 
+  beamer_presentation:
+    keep_tex: false
+    incremental: true
+    theme: "MUW"
+    colortheme: "MUW"
+    includes:
+      in_header: "header.tex"
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(dplyr)
+library(knitr)
+```
+
+# Introduction
+
+Your introduction goes here!
+
+- Item 1
+- Item 2
+- Item 3
+
+# Figures
+
+![Caption for figure](Images/image.png){width=80%}
+
+# Figures
+You can still use \\includegraphics for a finer control
+\includegraphics[width=0.5\linewidth]{Images/image.png}
+
+
+# Plots
+
+```{r echo=FALSE, fig.height=3, fig.width=3, fig.align='center'}
+data(cars)
+plot(cars$speed, cars$dist)
+```
+
+# Tables
+
+You can easily include R code and results
+
+```{r}
+head(cars) %>%
+  kable(caption = "A sample table")
+```
+
+# Readable Mathematics
+
+Formulas can be entered in-line, as in $\overline{X}=\frac{1}{N}\sum_i^N X_i$; or also 
+in a a new paragraph:
+
+\[\overline{X}=\frac{1}{N}\sum_i^N X_i\]
+
+-----
+
+\begin{center}
+\Huge Thanks!
+\end{center}
